@@ -1,0 +1,64 @@
+﻿@model IEnumerable<HOMESTAY_SH.Models.HomestayItemBestViewModel>
+<!DOCTYPE html>
+<html>
+<head<meta charset="utf-8" />
+ <style>
+     .btn-left1 {
+         left: 40px;
+         transform: rotate(-180deg);
+         position: relative;
+         width: 90px;
+         height: 90px;
+         top: 2140px;
+         background-color: #ffffff;
+         border-radius: 45px;
+     }
+ </style>
+</head>
+<div class="slider-best-choice">
+    <div class="slider-content2">
+        @foreach (var homestay in Model)
+        {
+            <div class="overlap-group-wrapper">
+                <div class="overlap-group-2">
+                    <p class="element-x-m-view-beach">
+                        @homestay.DienTich
+                        <br />
+                        @homestay.TienNghi
+                    </p>
+                    <p class="text-wrapper-22">
+                        @homestay.TenHomestay  <!-- Display Homestay Name -->
+                    </p>
+                    <img class="image-7" src="~/img/@homestay.AnhChinh" alt="Main Image" />  <!-- Display the main image -->
+                    <div class="text-wrapper-23">
+                        @homestay.TenHomestay  <!-- Display Homestay Name again -->
+                    </div>
+                    <div class="element-wrapper">
+                        <div class="element">
+                            <div class="component">
+                                <div class="text-wrapper-24">
+                                    @homestay.DiemTrungBinh  <!-- Display Rating -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element-comments">
+                        <div class="text-wrapper-25">
+                            @Html.ActionLink("DETAIL", "Detail", "Homestay", new { MaHomestay = homestay.MaHomestay }, null)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="btn-left1">
+    <img class="image-9" src="https://c.animaapp.com/crHRk4Ww/img/image-11-6@2x.png" />
+</div>
+<div class="btn-right1">
+    <img class="image-10" src="https://c.animaapp.com/crHRk4Ww/img/image-11-7@2x.png" />
+</div>
+</html>
+
+

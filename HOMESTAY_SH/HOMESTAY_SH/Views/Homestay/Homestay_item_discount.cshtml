@@ -1,0 +1,37 @@
+﻿@model IEnumerable<HOMESTAY_SH.Models.HomestayItemDiscount>
+
+<div class="slider-discount">
+    @foreach (var item in Model)
+    {
+        <div class="overlap-group-wrapper-2">
+            <div class="overlap-group-3">
+                <!-- Homestay Image -->
+                <img class="image-11" src="~/img/@item.AnhChinh" alt="@item.TenHomestay" />
+
+                <!-- Homestay Name -->
+                <div class="text-wrapper-28">@item.TenHomestay</div>
+
+                <!-- Homestay Description -->
+                <p class="text-wrapper-29"> @item.TenKhuVuc</p>
+
+                <!-- Average Rating -->
+                <div class="overlap-group-4">
+                    <div class="element">
+                        <div class="text-wrapper-24">@item.DiemTrungBinh</div>
+                    </div>
+                </div>
+
+                <!-- Additional Information (Comments and Visits) -->
+                <div class="element-comments-2">
+                  
+                </div>
+
+                <!-- Detail Link (could link to a more detailed page or trigger modal) -->
+                <div class="text-wrapper-30">
+                    @Html.ActionLink("DETAIL", "Detail", "Homestay", new { MaHomestay = item.MaHomestay }, null)
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

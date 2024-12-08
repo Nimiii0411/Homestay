@@ -1,0 +1,141 @@
+..register-page {
+    background-color: #dfd4b6;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.overlap-group-wrapper {
+    background-color: #dfd4b6;
+    width: 1548px;
+    padding: 36px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlap-group {
+    width: 1060px;
+    height: 650px;
+    background-color: #ffffff;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px #00000040;
+    display: flex;
+}
+
+/* Left side - Register Form */
+.register-form {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.text-wrapper {
+  font-family: "Lato", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+.p {
+  font-family: "Lato", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+.input-login-regis,
+.email-wrapper {
+  width: 50%;
+  height: 46px;
+  background-color: #ffffff;
+  border-radius: 35px;
+  box-shadow: 0px 4px 4px 2px #00000040;
+  border: none;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  font-family: "Lato", Helvetica;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.btn-login {
+  width: 368px;
+  height: 61px;
+  background-color: #f9a66a;
+  border-radius: 36px;
+  border: none;
+  cursor: pointer;
+  font-family: "Lato", Helvetica;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000000;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #9C4C12;
+  color: #ffffff;
+}
+
+.register-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.text-wrapper-4 {
+  font-family: "Lato", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 23px;
+}
+
+.text-wrapper-5 {
+  font-family: "Lato", Helvetica;
+  font-weight: 700;
+  color: #653b1c;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Right side - Image */
+.image-section {
+    flex: 1;
+    background-color: #d7b59d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.image-2 {
+    max-width: 150%; /* Changed from 200% to 100% for better scaling */
+    position: absolute;
+    top: 150px;
+    right: 50px;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .overlap-group {
+        flex-direction: column;
+    }
+
+    .login-form,
+    .image-section {
+        width: 100%;
+    }
+}

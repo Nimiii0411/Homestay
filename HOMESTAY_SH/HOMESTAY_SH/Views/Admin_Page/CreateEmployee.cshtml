@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SWEET_HOME.Models.EmployeeViewModel>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label for="MaNV">Mã nhân viên</label>
+        <input type="text" id="MaNV" name="MaNV" class="form-control" required />
+    </div>
+    <div>
+        <label for="TenNV">Tên nhân viên</label>
+        <input type="text" id="TenNV" name="TenNV" class="form-control" required />
+    </div>
+    <div>
+        <label for="DiaChi">Địa chỉ</label>
+        <input type="text" id="DiaChi" name="DiaChi" class="form-control" required />
+    </div>
+    <div>
+        <label for="SDT">Số điện thoại</label>
+        <input type="text" id="SDT" name="SDT" class="form-control" required />
+    </div>
+    <div>
+        <label for="KhuVuc">Khu vực</label>
+        <select id="KhuVuc" name="KhuVuc" class="form-control" required>
+            <option value="">Chọn khu vực</option>
+            @foreach (var item in ViewBag.KhuVucList as List<SelectListItem>)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Thêm</button>
+</form>

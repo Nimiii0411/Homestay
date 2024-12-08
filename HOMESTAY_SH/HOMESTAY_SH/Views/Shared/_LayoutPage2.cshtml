@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/CSS/globals.css" />
+    <link rel="stylesheet" href="~/CSS/dashboard.css" />
+    <script src="https://kit.fontawesome.com/11158556be.js" crossorigin="anonymous"></script>
+    <title>@ViewBag.Admin</title>
+</head>
+<body>
+    <div style="width: auto; height: 50px; background-color: #063146"></div>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header>Admin</header>
+        <ul>
+            <li><a href="/Admin_Page/Dashboard"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+            <li><a href="/Admin_Page/AccountList"><i class="fas fa-stream"></i>Account</a></li>
+            <li><a href="/Admin_Page/Homestay"><i class="fas fa-link"></i>Homestay</a></li>
+            <li><a href="/Admin_Page/Employee"><i class="fas fa-stream"></i>Employee</a></li>
+            <li><a href="/Admin_Page/Schedule"><i class="fas fa-calendar-week"></i>Schedule</a></li>
+            <li><a href="/Admin_Page/Income"><i class="far fa-question-circle"></i>Income</a></li>
+            <li><a href="/Admin_Page/Maintaince"><i class="fas fa-sliders-h"></i>Maintaince</a></li>
+
+        </ul>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

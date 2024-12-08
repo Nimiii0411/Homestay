@@ -1,0 +1,984 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QLH_SWEETHOMEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AnhHomestay">
+          <Key>
+            <PropertyRef Name="MaAnh" />
+          </Key>
+          <Property Name="MaAnh" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaHomestay" Type="varchar" MaxLength="10" />
+          <Property Name="AnhChinh" Type="nvarchar" MaxLength="255" />
+          <Property Name="AnhPhu1" Type="nvarchar" MaxLength="255" />
+          <Property Name="AnhPhu2" Type="nvarchar" MaxLength="255" />
+          <Property Name="AnhPhu3" Type="nvarchar" MaxLength="255" />
+          <Property Name="AnhPhu4" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="BaoDuong">
+          <Key>
+            <PropertyRef Name="MaBaoDuong" />
+          </Key>
+          <Property Name="MaBaoDuong" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaHomestay" Type="varchar" MaxLength="10" />
+          <Property Name="NgayBaoDuong" Type="date" />
+          <Property Name="NgayHoanThanh" Type="date" />
+          <Property Name="ChiPhi" Type="float" />
+          <Property Name="MoTaCongViec" Type="nvarchar" MaxLength="500" />
+          <Property Name="TrangThai" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ChiTietDatHomestay">
+          <Key>
+            <PropertyRef Name="MaDatHomestay" />
+          </Key>
+          <Property Name="MaDatHomestay" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaKhachHang" Type="varchar" MaxLength="10" />
+          <Property Name="MaHomestay" Type="varchar" MaxLength="10" />
+          <Property Name="NgayDat" Type="date" />
+          <Property Name="NgayNhan" Type="date" />
+          <Property Name="NgayTra" Type="date" />
+          <Property Name="SoLuongKhach" Type="int" />
+          <Property Name="TongTien" Type="float" />
+          <Property Name="TrangThai" Type="nvarchar" MaxLength="20" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ChiTietDichVuDatHomestay">
+          <Key>
+            <PropertyRef Name="MaChiTietDichVuDatHomestay" />
+          </Key>
+          <Property Name="MaChiTietDichVuDatHomestay" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaDatHomestay" Type="varchar" MaxLength="10" />
+          <Property Name="MaDichVu" Type="varchar" MaxLength="10" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="TongTienDichVu" Type="float" />
+        </EntityType>
+        <EntityType Name="DanhGia">
+          <Key>
+            <PropertyRef Name="MaDanhGia" />
+          </Key>
+          <Property Name="MaDanhGia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaKhachHang" Type="varchar" MaxLength="10" />
+          <Property Name="MaHomestay" Type="varchar" MaxLength="10" />
+          <Property Name="DiemDanhGia" Type="float" />
+          <Property Name="NoiDungDanhGia" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="DichVu">
+          <Key>
+            <PropertyRef Name="MaDichVu" />
+          </Key>
+          <Property Name="MaDichVu" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenDichVu" Type="nvarchar" MaxLength="50" />
+          <Property Name="GiaDichVu" Type="float" />
+          <Property Name="MoTaDichVu" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Homestay">
+          <Key>
+            <PropertyRef Name="MaHomestay" />
+          </Key>
+          <Property Name="MaHomestay" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenHomestay" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MaKhuVuc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaAnh" Type="varchar" MaxLength="10" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="GiaThue" Type="float" Nullable="false" />
+          <Property Name="SoLuongKhach" Type="int" Nullable="false" />
+          <Property Name="DienTich" Type="nvarchar" MaxLength="20" />
+          <Property Name="TienNghi" Type="nvarchar" MaxLength="500" />
+          <Property Name="NgayXayDung" Type="date" />
+          <Property Name="MaNhanVienTruc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TrangThai" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DiemTrungBinh" Type="float" />
+        </EntityType>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="MaKhachHang" />
+          </Key>
+          <Property Name="MaKhachHang" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenKhachHang" Type="nvarchar" MaxLength="50" />
+          <Property Name="CCCD" Type="varchar" MaxLength="20" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChiKH" Type="nvarchar" MaxLength="100" />
+          <Property Name="MaTaiKhoan" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="KhuVuc">
+          <Key>
+            <PropertyRef Name="MaKhuVuc" />
+          </Key>
+          <Property Name="MaKhuVuc" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenKhuVuc" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NhanVien">
+          <Key>
+            <PropertyRef Name="MaNhanVien" />
+          </Key>
+          <Property Name="MaNhanVien" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenNhanVien" Type="nvarchar" MaxLength="30" />
+          <Property Name="DiaChiNV" Type="nvarchar" MaxLength="90" />
+          <Property Name="SDT_NV" Type="varchar" MaxLength="15" />
+          <Property Name="CCCD" Type="varchar" MaxLength="20" />
+          <Property Name="ChucVu" Type="nvarchar" MaxLength="20" />
+          <Property Name="MaTaiKhoan" Type="varchar" MaxLength="10" />
+          <Property Name="MaKhuVuc" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TaiKhoan">
+          <Key>
+            <PropertyRef Name="MaTaiKhoan" />
+          </Key>
+          <Property Name="MaTaiKhoan" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenDangNhap" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MatKhau" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NgayTao" Type="datetime" />
+          <Property Name="Role" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ThanhToan">
+          <Key>
+            <PropertyRef Name="MaThanhToan" />
+          </Key>
+          <Property Name="MaThanhToan" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaDatHomestay" Type="varchar" MaxLength="10" />
+          <Property Name="NgayThanhToan" Type="date" />
+          <Property Name="PhuongThucThanhToan" Type="nvarchar" MaxLength="30" />
+          <Property Name="SoTien" Type="float" />
+          <Property Name="TrangThaiTT" Type="nvarchar" MaxLength="20" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_BaoDuong_Homestay">
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="0..1" />
+          <End Role="BaoDuong" Type="Self.BaoDuong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Homestay">
+              <PropertyRef Name="MaHomestay" />
+            </Principal>
+            <Dependent Role="BaoDuong">
+              <PropertyRef Name="MaHomestay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDatHomestay_Homestay">
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="0..1" />
+          <End Role="ChiTietDatHomestay" Type="Self.ChiTietDatHomestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Homestay">
+              <PropertyRef Name="MaHomestay" />
+            </Principal>
+            <Dependent Role="ChiTietDatHomestay">
+              <PropertyRef Name="MaHomestay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDatHomestay_KhachHang">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+          <End Role="ChiTietDatHomestay" Type="Self.ChiTietDatHomestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKhachHang" />
+            </Principal>
+            <Dependent Role="ChiTietDatHomestay">
+              <PropertyRef Name="MaKhachHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDichVuDatHomestay_CTDatHomestay">
+          <End Role="ChiTietDatHomestay" Type="Self.ChiTietDatHomestay" Multiplicity="0..1" />
+          <End Role="ChiTietDichVuDatHomestay" Type="Self.ChiTietDichVuDatHomestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietDatHomestay">
+              <PropertyRef Name="MaDatHomestay" />
+            </Principal>
+            <Dependent Role="ChiTietDichVuDatHomestay">
+              <PropertyRef Name="MaDatHomestay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDichVuDatHomestay_DichVu">
+          <End Role="DichVu" Type="Self.DichVu" Multiplicity="0..1" />
+          <End Role="ChiTietDichVuDatHomestay" Type="Self.ChiTietDichVuDatHomestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DichVu">
+              <PropertyRef Name="MaDichVu" />
+            </Principal>
+            <Dependent Role="ChiTietDichVuDatHomestay">
+              <PropertyRef Name="MaDichVu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DanhGia_Homestay">
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="0..1" />
+          <End Role="DanhGia" Type="Self.DanhGia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Homestay">
+              <PropertyRef Name="MaHomestay" />
+            </Principal>
+            <Dependent Role="DanhGia">
+              <PropertyRef Name="MaHomestay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DanhGia_KhachHang">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+          <End Role="DanhGia" Type="Self.DanhGia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKhachHang" />
+            </Principal>
+            <Dependent Role="DanhGia">
+              <PropertyRef Name="MaKhachHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homestay_AnhHomestay">
+          <End Role="AnhHomestay" Type="Self.AnhHomestay" Multiplicity="0..1" />
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnhHomestay">
+              <PropertyRef Name="MaAnh" />
+            </Principal>
+            <Dependent Role="Homestay">
+              <PropertyRef Name="MaAnh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homestay_KhuVuc">
+          <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="1" />
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVuc">
+              <PropertyRef Name="MaKhuVuc" />
+            </Principal>
+            <Dependent Role="Homestay">
+              <PropertyRef Name="MaKhuVuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homestay_NhanVien">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="Homestay">
+              <PropertyRef Name="MaNhanVienTruc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KhachHang_TaiKhoan">
+          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="MaTaiKhoan" />
+            </Principal>
+            <Dependent Role="KhachHang">
+              <PropertyRef Name="MaTaiKhoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NhanVien_KhuVuc">
+          <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVuc">
+              <PropertyRef Name="MaKhuVuc" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="MaKhuVuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NhanVien_TaiKhoan">
+          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="MaTaiKhoan" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="MaTaiKhoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThanhToan_DatHomestay">
+          <End Role="ChiTietDatHomestay" Type="Self.ChiTietDatHomestay" Multiplicity="0..1" />
+          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietDatHomestay">
+              <PropertyRef Name="MaDatHomestay" />
+            </Principal>
+            <Dependent Role="ThanhToan">
+              <PropertyRef Name="MaDatHomestay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLH_SWEETHOMEModelStoreContainer">
+          <EntitySet Name="AnhHomestay" EntityType="Self.AnhHomestay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BaoDuong" EntityType="Self.BaoDuong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiTietDatHomestay" EntityType="Self.ChiTietDatHomestay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiTietDichVuDatHomestay" EntityType="Self.ChiTietDichVuDatHomestay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DanhGia" EntityType="Self.DanhGia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DichVu" EntityType="Self.DichVu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Homestay" EntityType="Self.Homestay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhuVuc" EntityType="Self.KhuVuc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThanhToan" EntityType="Self.ThanhToan" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BaoDuong_Homestay" Association="Self.FK_BaoDuong_Homestay">
+            <End Role="Homestay" EntitySet="Homestay" />
+            <End Role="BaoDuong" EntitySet="BaoDuong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDatHomestay_Homestay" Association="Self.FK_CTDatHomestay_Homestay">
+            <End Role="Homestay" EntitySet="Homestay" />
+            <End Role="ChiTietDatHomestay" EntitySet="ChiTietDatHomestay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDatHomestay_KhachHang" Association="Self.FK_CTDatHomestay_KhachHang">
+            <End Role="KhachHang" EntitySet="KhachHang" />
+            <End Role="ChiTietDatHomestay" EntitySet="ChiTietDatHomestay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDichVuDatHomestay_CTDatHomestay" Association="Self.FK_CTDichVuDatHomestay_CTDatHomestay">
+            <End Role="ChiTietDatHomestay" EntitySet="ChiTietDatHomestay" />
+            <End Role="ChiTietDichVuDatHomestay" EntitySet="ChiTietDichVuDatHomestay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDichVuDatHomestay_DichVu" Association="Self.FK_CTDichVuDatHomestay_DichVu">
+            <End Role="DichVu" EntitySet="DichVu" />
+            <End Role="ChiTietDichVuDatHomestay" EntitySet="ChiTietDichVuDatHomestay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DanhGia_Homestay" Association="Self.FK_DanhGia_Homestay">
+            <End Role="Homestay" EntitySet="Homestay" />
+            <End Role="DanhGia" EntitySet="DanhGia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DanhGia_KhachHang" Association="Self.FK_DanhGia_KhachHang">
+            <End Role="KhachHang" EntitySet="KhachHang" />
+            <End Role="DanhGia" EntitySet="DanhGia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homestay_AnhHomestay" Association="Self.FK_Homestay_AnhHomestay">
+            <End Role="AnhHomestay" EntitySet="AnhHomestay" />
+            <End Role="Homestay" EntitySet="Homestay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homestay_KhuVuc" Association="Self.FK_Homestay_KhuVuc">
+            <End Role="KhuVuc" EntitySet="KhuVuc" />
+            <End Role="Homestay" EntitySet="Homestay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homestay_NhanVien" Association="Self.FK_Homestay_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanVien" />
+            <End Role="Homestay" EntitySet="Homestay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KhachHang_TaiKhoan" Association="Self.FK_KhachHang_TaiKhoan">
+            <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+            <End Role="KhachHang" EntitySet="KhachHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhanVien_KhuVuc" Association="Self.FK_NhanVien_KhuVuc">
+            <End Role="KhuVuc" EntitySet="KhuVuc" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhanVien_TaiKhoan" Association="Self.FK_NhanVien_TaiKhoan">
+            <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhToan_DatHomestay" Association="Self.FK_ThanhToan_DatHomestay">
+            <End Role="ChiTietDatHomestay" EntitySet="ChiTietDatHomestay" />
+            <End Role="ThanhToan" EntitySet="ThanhToan" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLH_SWEETHOMEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AnhHomestay">
+          <Key>
+            <PropertyRef Name="MaAnh" />
+          </Key>
+          <Property Name="MaAnh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaHomestay" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AnhChinh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AnhPhu1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AnhPhu2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AnhPhu3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AnhPhu4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Homestays" Relationship="Self.FK_Homestay_AnhHomestay" FromRole="AnhHomestay" ToRole="Homestay" />
+        </EntityType>
+        <EntityType Name="BaoDuong">
+          <Key>
+            <PropertyRef Name="MaBaoDuong" />
+          </Key>
+          <Property Name="MaBaoDuong" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaHomestay" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NgayBaoDuong" Type="DateTime" Precision="0" />
+          <Property Name="NgayHoanThanh" Type="DateTime" Precision="0" />
+          <Property Name="ChiPhi" Type="Double" />
+          <Property Name="MoTaCongViec" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Homestay" Relationship="Self.FK_BaoDuong_Homestay" FromRole="BaoDuong" ToRole="Homestay" />
+        </EntityType>
+        <EntityType Name="ChiTietDatHomestay">
+          <Key>
+            <PropertyRef Name="MaDatHomestay" />
+          </Key>
+          <Property Name="MaDatHomestay" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaKhachHang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaHomestay" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NgayDat" Type="DateTime" Precision="0" />
+          <Property Name="NgayNhan" Type="DateTime" Precision="0" />
+          <Property Name="NgayTra" Type="DateTime" Precision="0" />
+          <Property Name="SoLuongKhach" Type="Int32" />
+          <Property Name="TongTien" Type="Double" />
+          <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Homestay" Relationship="Self.FK_CTDatHomestay_Homestay" FromRole="ChiTietDatHomestay" ToRole="Homestay" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK_CTDatHomestay_KhachHang" FromRole="ChiTietDatHomestay" ToRole="KhachHang" />
+          <NavigationProperty Name="ChiTietDichVuDatHomestays" Relationship="Self.FK_CTDichVuDatHomestay_CTDatHomestay" FromRole="ChiTietDatHomestay" ToRole="ChiTietDichVuDatHomestay" />
+          <NavigationProperty Name="ThanhToans" Relationship="Self.FK_ThanhToan_DatHomestay" FromRole="ChiTietDatHomestay" ToRole="ThanhToan" />
+        </EntityType>
+        <EntityType Name="ChiTietDichVuDatHomestay">
+          <Key>
+            <PropertyRef Name="MaChiTietDichVuDatHomestay" />
+          </Key>
+          <Property Name="MaChiTietDichVuDatHomestay" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaDatHomestay" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaDichVu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="TongTienDichVu" Type="Double" />
+          <NavigationProperty Name="ChiTietDatHomestay" Relationship="Self.FK_CTDichVuDatHomestay_CTDatHomestay" FromRole="ChiTietDichVuDatHomestay" ToRole="ChiTietDatHomestay" />
+          <NavigationProperty Name="DichVu" Relationship="Self.FK_CTDichVuDatHomestay_DichVu" FromRole="ChiTietDichVuDatHomestay" ToRole="DichVu" />
+        </EntityType>
+        <EntityType Name="DanhGia">
+          <Key>
+            <PropertyRef Name="MaDanhGia" />
+          </Key>
+          <Property Name="MaDanhGia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaKhachHang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaHomestay" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DiemDanhGia" Type="Double" />
+          <Property Name="NoiDungDanhGia" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Homestay" Relationship="Self.FK_DanhGia_Homestay" FromRole="DanhGia" ToRole="Homestay" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK_DanhGia_KhachHang" FromRole="DanhGia" ToRole="KhachHang" />
+        </EntityType>
+        <EntityType Name="DichVu">
+          <Key>
+            <PropertyRef Name="MaDichVu" />
+          </Key>
+          <Property Name="MaDichVu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenDichVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GiaDichVu" Type="Double" />
+          <Property Name="MoTaDichVu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ChiTietDichVuDatHomestays" Relationship="Self.FK_CTDichVuDatHomestay_DichVu" FromRole="DichVu" ToRole="ChiTietDichVuDatHomestay" />
+        </EntityType>
+        <EntityType Name="Homestay">
+          <Key>
+            <PropertyRef Name="MaHomestay" />
+          </Key>
+          <Property Name="MaHomestay" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenHomestay" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaKhuVuc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaAnh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GiaThue" Type="Double" Nullable="false" />
+          <Property Name="SoLuongKhach" Type="Int32" Nullable="false" />
+          <Property Name="DienTich" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TienNghi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NgayXayDung" Type="DateTime" Precision="0" />
+          <Property Name="MaNhanVienTruc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DiemTrungBinh" Type="Double" />
+          <NavigationProperty Name="AnhHomestay" Relationship="Self.FK_Homestay_AnhHomestay" FromRole="Homestay" ToRole="AnhHomestay" />
+          <NavigationProperty Name="BaoDuongs" Relationship="Self.FK_BaoDuong_Homestay" FromRole="Homestay" ToRole="BaoDuong" />
+          <NavigationProperty Name="ChiTietDatHomestays" Relationship="Self.FK_CTDatHomestay_Homestay" FromRole="Homestay" ToRole="ChiTietDatHomestay" />
+          <NavigationProperty Name="DanhGias" Relationship="Self.FK_DanhGia_Homestay" FromRole="Homestay" ToRole="DanhGia" />
+          <NavigationProperty Name="KhuVuc" Relationship="Self.FK_Homestay_KhuVuc" FromRole="Homestay" ToRole="KhuVuc" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK_Homestay_NhanVien" FromRole="Homestay" ToRole="NhanVien" />
+        </EntityType>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="MaKhachHang" />
+          </Key>
+          <Property Name="MaKhachHang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenKhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CCCD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChiKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaTaiKhoan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ChiTietDatHomestays" Relationship="Self.FK_CTDatHomestay_KhachHang" FromRole="KhachHang" ToRole="ChiTietDatHomestay" />
+          <NavigationProperty Name="DanhGias" Relationship="Self.FK_DanhGia_KhachHang" FromRole="KhachHang" ToRole="DanhGia" />
+          <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_KhachHang_TaiKhoan" FromRole="KhachHang" ToRole="TaiKhoan" />
+        </EntityType>
+        <EntityType Name="KhuVuc">
+          <Key>
+            <PropertyRef Name="MaKhuVuc" />
+          </Key>
+          <Property Name="MaKhuVuc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenKhuVuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Homestays" Relationship="Self.FK_Homestay_KhuVuc" FromRole="KhuVuc" ToRole="Homestay" />
+          <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_KhuVuc" FromRole="KhuVuc" ToRole="NhanVien" />
+        </EntityType>
+        <EntityType Name="NhanVien">
+          <Key>
+            <PropertyRef Name="MaNhanVien" />
+          </Key>
+          <Property Name="MaNhanVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenNhanVien" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChiNV" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="SDT_NV" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CCCD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ChucVu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaTaiKhoan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaKhuVuc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Homestays" Relationship="Self.FK_Homestay_NhanVien" FromRole="NhanVien" ToRole="Homestay" />
+          <NavigationProperty Name="KhuVuc" Relationship="Self.FK_NhanVien_KhuVuc" FromRole="NhanVien" ToRole="KhuVuc" />
+          <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_NhanVien_TaiKhoan" FromRole="NhanVien" ToRole="TaiKhoan" />
+        </EntityType>
+        <EntityType Name="TaiKhoan">
+          <Key>
+            <PropertyRef Name="MaTaiKhoan" />
+          </Key>
+          <Property Name="MaTaiKhoan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MatKhau" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="KhachHangs" Relationship="Self.FK_KhachHang_TaiKhoan" FromRole="TaiKhoan" ToRole="KhachHang" />
+          <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_TaiKhoan" FromRole="TaiKhoan" ToRole="NhanVien" />
+        </EntityType>
+        <EntityType Name="ThanhToan">
+          <Key>
+            <PropertyRef Name="MaThanhToan" />
+          </Key>
+          <Property Name="MaThanhToan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaDatHomestay" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NgayThanhToan" Type="DateTime" Precision="0" />
+          <Property Name="PhuongThucThanhToan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="SoTien" Type="Double" />
+          <Property Name="TrangThaiTT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ChiTietDatHomestay" Relationship="Self.FK_ThanhToan_DatHomestay" FromRole="ThanhToan" ToRole="ChiTietDatHomestay" />
+        </EntityType>
+        <Association Name="FK_Homestay_AnhHomestay">
+          <End Role="AnhHomestay" Type="Self.AnhHomestay" Multiplicity="0..1" />
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnhHomestay">
+              <PropertyRef Name="MaAnh" />
+            </Principal>
+            <Dependent Role="Homestay">
+              <PropertyRef Name="MaAnh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaoDuong_Homestay">
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="0..1" />
+          <End Role="BaoDuong" Type="Self.BaoDuong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Homestay">
+              <PropertyRef Name="MaHomestay" />
+            </Principal>
+            <Dependent Role="BaoDuong">
+              <PropertyRef Name="MaHomestay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDatHomestay_Homestay">
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="0..1" />
+          <End Role="ChiTietDatHomestay" Type="Self.ChiTietDatHomestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Homestay">
+              <PropertyRef Name="MaHomestay" />
+            </Principal>
+            <Dependent Role="ChiTietDatHomestay">
+              <PropertyRef Name="MaHomestay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDatHomestay_KhachHang">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+          <End Role="ChiTietDatHomestay" Type="Self.ChiTietDatHomestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKhachHang" />
+            </Principal>
+            <Dependent Role="ChiTietDatHomestay">
+              <PropertyRef Name="MaKhachHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDichVuDatHomestay_CTDatHomestay">
+          <End Role="ChiTietDatHomestay" Type="Self.ChiTietDatHomestay" Multiplicity="0..1" />
+          <End Role="ChiTietDichVuDatHomestay" Type="Self.ChiTietDichVuDatHomestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietDatHomestay">
+              <PropertyRef Name="MaDatHomestay" />
+            </Principal>
+            <Dependent Role="ChiTietDichVuDatHomestay">
+              <PropertyRef Name="MaDatHomestay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThanhToan_DatHomestay">
+          <End Role="ChiTietDatHomestay" Type="Self.ChiTietDatHomestay" Multiplicity="0..1" />
+          <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietDatHomestay">
+              <PropertyRef Name="MaDatHomestay" />
+            </Principal>
+            <Dependent Role="ThanhToan">
+              <PropertyRef Name="MaDatHomestay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDichVuDatHomestay_DichVu">
+          <End Role="DichVu" Type="Self.DichVu" Multiplicity="0..1" />
+          <End Role="ChiTietDichVuDatHomestay" Type="Self.ChiTietDichVuDatHomestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DichVu">
+              <PropertyRef Name="MaDichVu" />
+            </Principal>
+            <Dependent Role="ChiTietDichVuDatHomestay">
+              <PropertyRef Name="MaDichVu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DanhGia_Homestay">
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="0..1" />
+          <End Role="DanhGia" Type="Self.DanhGia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Homestay">
+              <PropertyRef Name="MaHomestay" />
+            </Principal>
+            <Dependent Role="DanhGia">
+              <PropertyRef Name="MaHomestay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DanhGia_KhachHang">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+          <End Role="DanhGia" Type="Self.DanhGia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKhachHang" />
+            </Principal>
+            <Dependent Role="DanhGia">
+              <PropertyRef Name="MaKhachHang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homestay_KhuVuc">
+          <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="1" />
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVuc">
+              <PropertyRef Name="MaKhuVuc" />
+            </Principal>
+            <Dependent Role="Homestay">
+              <PropertyRef Name="MaKhuVuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Homestay_NhanVien">
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+          <End Role="Homestay" Type="Self.Homestay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhanVien">
+              <PropertyRef Name="MaNhanVien" />
+            </Principal>
+            <Dependent Role="Homestay">
+              <PropertyRef Name="MaNhanVienTruc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KhachHang_TaiKhoan">
+          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="MaTaiKhoan" />
+            </Principal>
+            <Dependent Role="KhachHang">
+              <PropertyRef Name="MaTaiKhoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NhanVien_KhuVuc">
+          <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVuc">
+              <PropertyRef Name="MaKhuVuc" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="MaKhuVuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NhanVien_TaiKhoan">
+          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="MaTaiKhoan" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="MaTaiKhoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLH_SWEETHOMEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AnhHomestays" EntityType="Self.AnhHomestay" />
+          <EntitySet Name="BaoDuongs" EntityType="Self.BaoDuong" />
+          <EntitySet Name="ChiTietDatHomestays" EntityType="Self.ChiTietDatHomestay" />
+          <EntitySet Name="ChiTietDichVuDatHomestays" EntityType="Self.ChiTietDichVuDatHomestay" />
+          <EntitySet Name="DanhGias" EntityType="Self.DanhGia" />
+          <EntitySet Name="DichVus" EntityType="Self.DichVu" />
+          <EntitySet Name="Homestays" EntityType="Self.Homestay" />
+          <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+          <EntitySet Name="KhuVucs" EntityType="Self.KhuVuc" />
+          <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+          <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+          <EntitySet Name="ThanhToans" EntityType="Self.ThanhToan" />
+          <AssociationSet Name="FK_Homestay_AnhHomestay" Association="Self.FK_Homestay_AnhHomestay">
+            <End Role="AnhHomestay" EntitySet="AnhHomestays" />
+            <End Role="Homestay" EntitySet="Homestays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaoDuong_Homestay" Association="Self.FK_BaoDuong_Homestay">
+            <End Role="Homestay" EntitySet="Homestays" />
+            <End Role="BaoDuong" EntitySet="BaoDuongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDatHomestay_Homestay" Association="Self.FK_CTDatHomestay_Homestay">
+            <End Role="Homestay" EntitySet="Homestays" />
+            <End Role="ChiTietDatHomestay" EntitySet="ChiTietDatHomestays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDatHomestay_KhachHang" Association="Self.FK_CTDatHomestay_KhachHang">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="ChiTietDatHomestay" EntitySet="ChiTietDatHomestays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDichVuDatHomestay_CTDatHomestay" Association="Self.FK_CTDichVuDatHomestay_CTDatHomestay">
+            <End Role="ChiTietDatHomestay" EntitySet="ChiTietDatHomestays" />
+            <End Role="ChiTietDichVuDatHomestay" EntitySet="ChiTietDichVuDatHomestays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThanhToan_DatHomestay" Association="Self.FK_ThanhToan_DatHomestay">
+            <End Role="ChiTietDatHomestay" EntitySet="ChiTietDatHomestays" />
+            <End Role="ThanhToan" EntitySet="ThanhToans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTDichVuDatHomestay_DichVu" Association="Self.FK_CTDichVuDatHomestay_DichVu">
+            <End Role="DichVu" EntitySet="DichVus" />
+            <End Role="ChiTietDichVuDatHomestay" EntitySet="ChiTietDichVuDatHomestays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DanhGia_Homestay" Association="Self.FK_DanhGia_Homestay">
+            <End Role="Homestay" EntitySet="Homestays" />
+            <End Role="DanhGia" EntitySet="DanhGias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DanhGia_KhachHang" Association="Self.FK_DanhGia_KhachHang">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="DanhGia" EntitySet="DanhGias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homestay_KhuVuc" Association="Self.FK_Homestay_KhuVuc">
+            <End Role="KhuVuc" EntitySet="KhuVucs" />
+            <End Role="Homestay" EntitySet="Homestays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Homestay_NhanVien" Association="Self.FK_Homestay_NhanVien">
+            <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="Homestay" EntitySet="Homestays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KhachHang_TaiKhoan" Association="Self.FK_KhachHang_TaiKhoan">
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhanVien_KhuVuc" Association="Self.FK_NhanVien_KhuVuc">
+            <End Role="KhuVuc" EntitySet="KhuVucs" />
+            <End Role="NhanVien" EntitySet="NhanViens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NhanVien_TaiKhoan" Association="Self.FK_NhanVien_TaiKhoan">
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+            <End Role="NhanVien" EntitySet="NhanViens" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLH_SWEETHOMEModelStoreContainer" CdmEntityContainer="QLH_SWEETHOMEEntities">
+          <EntitySetMapping Name="AnhHomestays">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.AnhHomestay">
+              <MappingFragment StoreEntitySet="AnhHomestay">
+                <ScalarProperty Name="MaAnh" ColumnName="MaAnh" />
+                <ScalarProperty Name="MaHomestay" ColumnName="MaHomestay" />
+                <ScalarProperty Name="AnhChinh" ColumnName="AnhChinh" />
+                <ScalarProperty Name="AnhPhu1" ColumnName="AnhPhu1" />
+                <ScalarProperty Name="AnhPhu2" ColumnName="AnhPhu2" />
+                <ScalarProperty Name="AnhPhu3" ColumnName="AnhPhu3" />
+                <ScalarProperty Name="AnhPhu4" ColumnName="AnhPhu4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BaoDuongs">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.BaoDuong">
+              <MappingFragment StoreEntitySet="BaoDuong">
+                <ScalarProperty Name="MaBaoDuong" ColumnName="MaBaoDuong" />
+                <ScalarProperty Name="MaHomestay" ColumnName="MaHomestay" />
+                <ScalarProperty Name="NgayBaoDuong" ColumnName="NgayBaoDuong" />
+                <ScalarProperty Name="NgayHoanThanh" ColumnName="NgayHoanThanh" />
+                <ScalarProperty Name="ChiPhi" ColumnName="ChiPhi" />
+                <ScalarProperty Name="MoTaCongViec" ColumnName="MoTaCongViec" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiTietDatHomestays">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.ChiTietDatHomestay">
+              <MappingFragment StoreEntitySet="ChiTietDatHomestay">
+                <ScalarProperty Name="MaDatHomestay" ColumnName="MaDatHomestay" />
+                <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+                <ScalarProperty Name="MaHomestay" ColumnName="MaHomestay" />
+                <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+                <ScalarProperty Name="NgayNhan" ColumnName="NgayNhan" />
+                <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
+                <ScalarProperty Name="SoLuongKhach" ColumnName="SoLuongKhach" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiTietDichVuDatHomestays">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.ChiTietDichVuDatHomestay">
+              <MappingFragment StoreEntitySet="ChiTietDichVuDatHomestay">
+                <ScalarProperty Name="MaChiTietDichVuDatHomestay" ColumnName="MaChiTietDichVuDatHomestay" />
+                <ScalarProperty Name="MaDatHomestay" ColumnName="MaDatHomestay" />
+                <ScalarProperty Name="MaDichVu" ColumnName="MaDichVu" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="TongTienDichVu" ColumnName="TongTienDichVu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DanhGias">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.DanhGia">
+              <MappingFragment StoreEntitySet="DanhGia">
+                <ScalarProperty Name="MaDanhGia" ColumnName="MaDanhGia" />
+                <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+                <ScalarProperty Name="MaHomestay" ColumnName="MaHomestay" />
+                <ScalarProperty Name="DiemDanhGia" ColumnName="DiemDanhGia" />
+                <ScalarProperty Name="NoiDungDanhGia" ColumnName="NoiDungDanhGia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DichVus">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.DichVu">
+              <MappingFragment StoreEntitySet="DichVu">
+                <ScalarProperty Name="MaDichVu" ColumnName="MaDichVu" />
+                <ScalarProperty Name="TenDichVu" ColumnName="TenDichVu" />
+                <ScalarProperty Name="GiaDichVu" ColumnName="GiaDichVu" />
+                <ScalarProperty Name="MoTaDichVu" ColumnName="MoTaDichVu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Homestays">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.Homestay">
+              <MappingFragment StoreEntitySet="Homestay">
+                <ScalarProperty Name="MaHomestay" ColumnName="MaHomestay" />
+                <ScalarProperty Name="TenHomestay" ColumnName="TenHomestay" />
+                <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+                <ScalarProperty Name="MaAnh" ColumnName="MaAnh" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="GiaThue" ColumnName="GiaThue" />
+                <ScalarProperty Name="SoLuongKhach" ColumnName="SoLuongKhach" />
+                <ScalarProperty Name="DienTich" ColumnName="DienTich" />
+                <ScalarProperty Name="TienNghi" ColumnName="TienNghi" />
+                <ScalarProperty Name="NgayXayDung" ColumnName="NgayXayDung" />
+                <ScalarProperty Name="MaNhanVienTruc" ColumnName="MaNhanVienTruc" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="DiemTrungBinh" ColumnName="DiemTrungBinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhachHangs">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.KhachHang">
+              <MappingFragment StoreEntitySet="KhachHang">
+                <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+                <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DiaChiKH" ColumnName="DiaChiKH" />
+                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhuVucs">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.KhuVuc">
+              <MappingFragment StoreEntitySet="KhuVuc">
+                <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+                <ScalarProperty Name="TenKhuVuc" ColumnName="TenKhuVuc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhanViens">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.NhanVien">
+              <MappingFragment StoreEntitySet="NhanVien">
+                <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+                <ScalarProperty Name="TenNhanVien" ColumnName="TenNhanVien" />
+                <ScalarProperty Name="DiaChiNV" ColumnName="DiaChiNV" />
+                <ScalarProperty Name="SDT_NV" ColumnName="SDT_NV" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+                <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaiKhoans">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.TaiKhoan">
+              <MappingFragment StoreEntitySet="TaiKhoan">
+                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThanhToans">
+            <EntityTypeMapping TypeName="QLH_SWEETHOMEModel.ThanhToan">
+              <MappingFragment StoreEntitySet="ThanhToan">
+                <ScalarProperty Name="MaThanhToan" ColumnName="MaThanhToan" />
+                <ScalarProperty Name="MaDatHomestay" ColumnName="MaDatHomestay" />
+                <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />
+                <ScalarProperty Name="PhuongThucThanhToan" ColumnName="PhuongThucThanhToan" />
+                <ScalarProperty Name="SoTien" ColumnName="SoTien" />
+                <ScalarProperty Name="TrangThaiTT" ColumnName="TrangThaiTT" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

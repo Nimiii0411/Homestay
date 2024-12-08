@@ -1,0 +1,159 @@
+﻿@model IEnumerable<SWEET_HOME.Models.EmployeeViewModel>
+
+@{
+    ViewBag.Title = "Employee";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Homestay</title>
+    <link rel="stylesheet" href="~/CSS/globals.css" />
+    <link rel="stylesheet" href="~/CSS/Main-css.css" />
+    <style>
+        /* Table styles */
+        table {
+            position: relative;
+            top: 30px; /* Adjust if needed */
+            left: 0; /* Start aligned to the viewport */
+            width: 100%;
+            font-family: "Lato", Helvetica, sans-serif;
+            font-size: 20px;
+            z-index: -1;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        .table a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        /* Adjust table position when sidebar is open */
+        #check:checked ~ section .table {
+            margin-left: 250px; /* Match the sidebar width */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+
+        .btn-create {
+            margin-bottom: 20px;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .page-item {
+            margin: 0 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+            .page-link:hover {
+                background-color: #007bff;
+                color: white;
+            }
+
+        .page-item.disabled .page-link {
+            color: #6c757d;
+            border-color: #6c757d;
+            pointer-events: none;
+        }
+
+        .page-item.active .page-link {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+    </style>
+
+</head>
+<h4 style="text-align:center; font-weight:100; font-size: 1cm;font-family: Lato, Helvetica, sans-serif;" ;>EMPLOYEE</h4>
+
+<button class="btn">
+    @Html.ActionLink("Create New", "CreateEmployee")
+</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã NV</th>
+            <th>Tên NV</th>
+            <th>SĐT</th>
+            <th>Địa chỉ</th>
+            <th>Khu vực</th>
+            <th>Homestay</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MaNV</td>
+                    <td>@item.TenNV</td>
+                    <td>@item.SDT</td>
+                    <td>@item.DiaChi</td>
+                    <td>@item.KhuVuc</td>
+                    <td>@item.HomestayCT</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Employee", new { id = item.MaNV })" class="btn btn-primary btn-sm">Sửa</a>
+                        <a href="@Url.Action("Delete", "Employee", new { id = item.MaNV })"
+                           onclick="return confirm('Bạn có chắc chắn muốn xóa nhân viên này?');"
+                           class="btn btn-danger btn-sm">Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7" class="text-center">Không có dữ liệu</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

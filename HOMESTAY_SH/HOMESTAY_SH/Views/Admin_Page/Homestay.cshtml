@@ -1,0 +1,106 @@
+﻿@model IEnumerable<SWEET_HOME.Models.HomestayViewModels>
+
+@{
+    ViewBag.Title = "Homestay";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Homestay</title>
+    <link rel="stylesheet" href="~/CSS/globals.css" />
+    <link rel="stylesheet" href="~/CSS/Main-css.css" />
+    <style>
+        /* Table styles */
+        table {
+            position: relative;
+            top: 30px; /* Adjust if needed */
+            left: 0; /* Start aligned to the viewport */
+            width: 100%;
+            font-family: "Lato", Helvetica, sans-serif;
+            font-size: 20px;
+            z-index: -1;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        .table a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        /* Adjust table position when sidebar is open */
+        #check:checked ~ section .table {
+            margin-left: 250px; /* Match the sidebar width */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+
+        .btn-create {
+            margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+
+<h4 style="text-align:center; font-weight:100; font-size: 1cm;font-family: Lato, Helvetica, sans-serif;" ;>HOMESTAY</h4>
+
+<button class="btn">
+    @Html.ActionLink("Create New", "Create")
+</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên Homestay</th>
+            <th>Địa Chỉ</th>
+            <th>Giá Thuê</th>
+            <th>Số Lượng Khách</th>
+            <th>Trạng Thái</th>
+            <th>Nhân Viên Trực</th>
+            <th>Chỉnh sửa</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TenHomestay</td>
+                <td>@item.DiaChi</td>
+                <td>@item.GiaThue</td>
+                <td>@item.SoLuongKhach</td>
+                <td>@item.TrangThai</td>
+                <td>@item.NhanVienTen</td>
+                <td><button>Detail</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

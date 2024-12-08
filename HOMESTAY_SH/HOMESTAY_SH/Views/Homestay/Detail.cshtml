@@ -1,0 +1,91 @@
+﻿@model HOMESTAY_SH.Models.HomestayDetailViewModel
+
+@{
+    ViewBag.Title = Model.TenHomestay + " - Detail";
+    Layout = "~/Views/Shared/_LayoutPage3.cshtml";
+
+}
+<head>
+    <style>
+        .Image23 {
+            width: 683px;
+            height: 444px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+        }
+        .Image24 {
+            width: 160px; height: 132px; left: 166px; top: 456px; position: absolute;
+        }
+        .Image25 {
+            width: 160px; height: 132px; left: 342px; top: 455px; position: absolute;
+        }
+        .Image {
+            width: 153px; height: 131px; left: 0px; top: 455px; position: absolute;
+        }
+        .Image26 {
+            width: 153px;
+            height: 131px;
+            left: 518px;
+            top: 455px;
+            position: absolute;
+ 
+        }
+        .Room-Detail {
+            width: 541px; height: 586px; position: relative; top: 50px;right: 70px;
+        }
+    </style>
+</head>
+
+<div class="PictureDetail">
+    <!-- Main Image -->
+    <img class="Image23" src="@Model.AnhChinh" alt="Main Image" />
+
+    <!-- Additional Images -->
+    <img class="Image24" src="~/img/@Model.AnhPhu1" alt="Additional Image 1" />
+    <img class="Image25"  src="~/img/@Model.AnhPhu2" alt="Additional Image 2" />
+    <img class="Image" src="~/img/@Model.AnhPhu3" alt="Additional Image 3" />
+    <img  class="Image26"src="~/img/@Model.AnhPhu4" alt="Additional Image 4" />
+    
+</div>
+
+<!-- Room Details -->
+<div class="Room-Detail" >
+    <div class="Name-homestay" style="width: 241px; height: 300px; left: 0px; top: 41.65px; position: absolute; color: black; font-size: 40px; font-family: Lato; font-weight: 800;">
+        @Model.TenHomestay
+    </div>
+    <div class="Address-Detail" style="width: 420px; height: 22.76px; left: 30px; top: 143.12px; position: absolute; color: black; font-size: 20px; font-family: Lato; font-style: italic; font-weight: 300">
+        @Model.DiaChi, @Model.TenKhuVuc
+    </div>
+    <div class="Room-Size" style="width: 221px; height: 27.50px; left: 8px; top: 199.08px; position: absolute; color: black; font-size: 24px; font-family: Lato; font-style: italic; font-weight: 275;">
+        @Model.DienTich m², Double room
+    </div>
+    <div>
+        <p></p>
+    </div>
+    <div class="5Day" style="width: 192px; height: 40.78px; left: 18px; top: 539.53px; position: absolute; color: black; font-size: 36px; font-family: Lato; font-weight: 500; word-wrap: break-word">
+        $@Model.GiaThue / day
+    </div>
+    <div class="Button" style="width: 223px; height: 60.69px; left: 318px; top: 525.31px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
+        <div class="Group38" style="width: 223px; height: 60.69px; position: relative">
+            <div class="Rectangle23" style="width: 223px; height: 60.69px; left: 0px; top: 0px; position: absolute; background: #D7B69E; border-radius: 10px">
+                <a href="/Homestay/DatHomestay?MaHomestay=@Model.MaHomestay"
+                   class="Detail"
+                   style="width: 192px; left: 15px; top: 17px; position: absolute; text-align: center; color: black; font-size: 26px; font-family: Lato; font-weight: 800; word-wrap: break-word; text-decoration: none;">
+                    BOOKING
+                </a>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Description Section -->
+<div class="Description" style="width: 1410px; height: 508px; position: relative; margin-left: 20px; margin-top: 30px;">
+    <div class="Line1" style="width: 1404px; height: 0px; left: 5.99px; top: 52px; position: absolute; border: 1px black solid"></div>
+    <div class="Description-title">Description</div>
+    <div class="Information">
+        a metus feugiat, sollicitudin tristique velit rhoncus. Quisque lacinia rhoncus commodo. Etiam maximus mi sollicitudin dolor convallis condimentum. Donec magna felis, gravida ac tincidunt quis, rutrum pulvinar elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque blandit urna at nibh maximus facilisis. <br /><br />Curabitur leo lorem, interdum nec nibh vel, ullamcorper laoreet massa. Sed congue lorem elit, cursus venenatis dolor dictum et. Ut a felis vel massa aliquet tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In interdum nisi eget augue molestie blandit.<br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra libero sit amet massa rutrum convallis in eget nunc. Cras bibendum metus a metus feugiat, sollicitudin tristique velit rhoncus. Quisque lacinia rhoncus commodo.<br /><br />Curabitur leo lorem, interdum nec nibh vel, ullamcorper laoreet massa. Sed congue lorem elit, cursus venenatis dolor dictum et. Ut a felis vel massa aliquet tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In interdum nisi eget augue molestie blandit
+    </div>
+</div>

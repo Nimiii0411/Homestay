@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/CSS/globals.css" />
+    <link rel="stylesheet" href="~/CSS/Main-css.css" />
+    <link rel="stylesheet" href="~/CSS/hiring-page-detail.css" />
+
+    <script src="~/Script/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/11158556be.js" crossorigin="anonymous"></script>
+</head>
+<title>@ViewBag.Title</title>
+<body>
+    <div class="main-page">
+        <div class="div">
+            <div class="overlap">
+                <div class="rectangle"></div>
+                <div class="search-bar">
+                    <div class="overlap-group">
+                        <img class="image" src="https://c.animaapp.com/crHRk4Ww/img/image-2@2x.png" />
+                        <form method="get" action="@Url.Action("Search", "Homestay")">
+                            <input type="text" placeholder="Searching..." name="searchQuery" />
+                            <button type="submit" class="img-button">
+                                <img class="img" src="https://c.animaapp.com/crHRk4Ww/img/image-3@2x.png" />
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="account-dropdown">
+                        <img class="image-2" src="https://c.animaapp.com/crHRk4Ww/img/image-8@2x.png" />
+                        <div class="text-wrapper-2">MY ACCOUNT</div>
+                        <div class="dropdown-content">
+                            <a href="@Url.Action("Login", "Account")">Login</a>
+                            <a href="@Url.Action("Register", "Account")">Register</a>
+                        </div>
+                    </div>
+                    <a href="@Url.Action("Logout", "Account")">
+                        <img class="imagelog" src="~/img/logout.png" />
+                    </a>
+
+                </div>
+
+                <img class="picture-header" src="https://c.animaapp.com/crHRk4Ww/img/pictureheader.png" />
+                <div class="text-wrapper-3">SWEET HOME</div>
+                <div class="text-wrapper-4">Homestay</div>
+                <div class="text-wrapper-5"> @Html.ActionLink("Home", "Index", "Home", null, new { @class = "home-link" })</div>
+                <div class="text-wrapper-6">City</div>
+                <div class="text-wrapper-7">Service</div>
+            </div>
+            <div class="white-page">
+
+
+                @RenderBody()
+
+            </div>
+            <div class="footer-of-page">
+                <div class="overlap-4">
+                    <div class="group-2">
+                        <div class="text-wrapper-11">Home</div>
+                        <div class="text-wrapper-12">About us</div>
+                        <div class="text-wrapper-13">Service</div>
+                        <div class="text-wrapper-14">Rent</div>
+                        <div class="text-wrapper-15">Contact</div>
+                        <div class="text-wrapper-16">CONTENT</div>
+                    </div>
+                    <div class="group-3">
+                        <div class="text-wrapper-17">Price</div>
+                        <p class="booking">
+                            <span class="text-wrapper-18">Booking</span> <span class="text-wrapper-19">&nbsp;</span>
+                        </p>
+                        <div class="text-wrapper-13">Check out</div>
+                        <div class="text-wrapper-16">DETAIL</div>
+                    </div>
+                    <div class="text-wrapper-20">SOCIAL MEDIA</div>
+                    <div class="group-4">
+                        <div class="text-wrapper-21">Meal</div>
+                        <div class="text-wrapper-12">Cleaning</div>
+                        <div class="text-wrapper-13">Host</div>
+                        <div class="text-wrapper-16">SERVICE</div>
+                    </div>
+                    <div class="rectangle-2"></div>
+                    <p class="p">SWEET HOME Coppyright 2024 - 2099 Our Company T.V All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>>
+</body>
+</html>

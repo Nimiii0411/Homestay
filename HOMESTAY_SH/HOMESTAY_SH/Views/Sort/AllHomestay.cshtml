@@ -1,0 +1,73 @@
+﻿@model IEnumerable<HOMESTAY_SH.Models.HomestayDetailViewModel>
+@{ 
+    Layout = "~/Views/Shared/_LayoutPage4.cshtml";
+}
+
+<head>
+    <style>
+        .coll {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            margin-left: 420px;
+            position: absolute;
+            top: 290px;
+        }
+    </style>
+</head>
+
+    <div class="coll">
+        @foreach (var homestay in Model)
+        {
+            <div class="overlap-group-wrapper">
+                <div class="overlap-group-2">
+                    <p class="element-x-m-view-beach">
+                        @homestay.DienTich
+                        <br />
+                        @homestay.TienNghi
+                    </p>
+                    <p class="text-wrapper-22">
+                        @homestay.TenHomestay  <!-- Display Homestay Name -->
+                    </p>
+                    <img class="image-7" src="~/img/@homestay.AnhChinh" alt="Main Image" />  <!-- Display the main image -->
+                    <div class="text-wrapper-23">
+                        @homestay.TenHomestay  <!-- Display Homestay Name again -->
+                    </div>
+                    <div class="element-wrapper">
+                        <div class="element">
+                            <div class="component">
+                                <div class="text-wrapper-24">
+                                    @homestay.DiemTrungBinh  <!-- Display Rating -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element-comments">
+                        <div class="text-wrapper-25">
+                            @Html.ActionLink("DETAIL", "Detail", "Homestay", new { MaHomestay = homestay.MaHomestay }, null)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+
+                    <!-- Phân trang -->
+                    <div class="pagination">
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            if (i == ViewBag.CurrentPage)
+                            {
+                                <span class="active-page">@i</span>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("AllHomestay", new { page = i })">@i</a>
+                            }
+                        }
+                    </div>
+
+                
+

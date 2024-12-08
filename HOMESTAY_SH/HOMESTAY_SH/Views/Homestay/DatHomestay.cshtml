@@ -1,0 +1,112 @@
+﻿@model HomestayBookingViewModel
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<div class="container booking-form">
+    <h2>Đặt Homestay: @Model.TenHomestay</h2>
+
+    @using (Html.BeginForm("DatHomestay", "Homestay", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.MaHomestay)
+        @Html.HiddenFor(m => m.GiaThue)
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Thông Tin Khách Hàng</h3>
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.TenKhachHang)
+                    @Html.TextBoxFor(m => m.TenKhachHang, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.TenKhachHang, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.SoCCCD)
+                    @Html.TextBoxFor(m => m.SoCCCD, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.SoCCCD, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.SDT)
+                    @Html.TextBoxFor(m => m.SDT, new { @class = "form-control", type = "tel" })
+                    @Html.ValidationMessageFor(m => m.SDT, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Chi Tiết Đặt Phòng</h3>
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.NgayNhan, "Ngày Đến")
+                    @Html.TextBoxFor(m => m.NgayNhan, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                    @Html.ValidationMessageFor(m => m.NgayNhan, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.NgayTra, "Ngày Trả")
+                    @Html.TextBoxFor(m => m.NgayTra, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                    @Html.ValidationMessageFor(m => m.NgayTra, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.SoLuongNguoi, "Số Lượng Người")
+                    @Html.TextBoxFor(m => m.SoLuongNguoi, new { @class = "form-control", type = "number", min = "1", max = "10" })
+                    @Html.ValidationMessageFor(m => m.SoLuongNguoi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(m => m.GhiChu, "Ghi Chú")
+            @Html.TextAreaFor(m => m.GhiChu, new { @class = "form-control", rows = "3" })
+            @Html.ValidationMessageFor(m => m.GhiChu, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-check mb-2">
+            <input type="checkbox" class="form-check-input" id="dichVu-@dichVu.MaDichVu"
+                   name="SelectedDichVuIds" value="@dichVu.MaDichVu" data-price="@dichVu.GiaDichVu" />
+            <label class="form-check-label" for="dichVu-@dichVu.MaDichVu">
+                @dichVu.TenDichVu - Giá: @dichVu.GiaDichVu?.ToString("N0") ?? "0" VNĐ/ngày
+                <small class="text-muted d-block">@dichVu.MoTaDichVu</small>
+            </label>
+        </div>
+
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(m => m.PhuongThucThanhToan)
+            @Html.DropDownListFor(m => m.PhuongThucThanhToan,
+                new SelectList(new[] { "Tiền mặt", "Chuyển khoản" }),
+                "-- Chọn phương thức thanh toán --",
+                new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.PhuongThucThanhToan, "", new { @class = "text-danger" })
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Xác Nhận Đặt</button>
+    }
+</div>
+<script>
+    $(document).ready(function () {
+        function updateTotal() {
+            const days = Math.max(1, (new Date($('#NgayTra').val()) - new Date($('#NgayNhan').val())) / (1000 * 60 * 60 * 24));
+            const homestayPrice = parseFloat(@Model.GiaThue);
+            let servicePrice = 0;
+
+            $('input[name="SelectedDichVuIds"]:checked').each(function () {
+                const servicePricePerDay = parseFloat($(this).data('price'));
+                servicePrice += servicePricePerDay || 0;
+            });
+
+            $('#totalRent').text((homestayPrice * days).toLocaleString('vi-VN'));
+            $('#totalService').text((servicePrice * days).toLocaleString('vi-VN'));
+            $('#finalTotal').text(((homestayPrice + servicePrice) * days).toLocaleString('vi-VN'));
+        }
+
+        $('#NgayNhan, #NgayTra').on('change', updateTotal);
+        $('input[name="SelectedDichVuIds"]').on('change', updateTotal);
+    });
+</script>

@@ -1,0 +1,223 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\tkwweb\\HOMESTAY_SH\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\views\\sort\\allhomestay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\views\\sort\\allhomestay.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|d:\\tkwweb\\homestay_sh\\homestay_sh\\views\\shared\\_layoutpage4.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\views\\shared\\_layoutpage4.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\controllers\\sortcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\controllers\\sortcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\views\\shared\\_layoutpage2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\views\\shared\\_layoutpage2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\views\\shared\\_layoutpage1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\views\\shared\\_layoutpage1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\controllers\\homestaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\controllers\\homestaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\views\\homestay\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\views\\homestay\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\models\\homestaydetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\models\\homestaydetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\views\\homestay\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\views\\homestay\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|D:\\tkwweb\\HOMESTAY_SH\\homestay_sh\\models\\homestaybookingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D69EFC83-49CB-4491-8178-1F5A63B0BA83}|HOMESTAY_SH\\HOMESTAY_SH.csproj|solutionrelative:homestay_sh\\models\\homestaybookingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 360,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "HOMESTAY_SH\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T08:19:12.202Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SortController.cs",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Controllers\\SortController.cs",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Controllers\\SortController.cs",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Controllers\\SortController.cs",
+              "RelativeToolTip": "HOMESTAY_SH\\Controllers\\SortController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA+wA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T07:35:35.673Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_LayoutPage4.cshtml",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Shared\\_LayoutPage4.cshtml",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Views\\Shared\\_LayoutPage4.cshtml",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Shared\\_LayoutPage4.cshtml",
+              "RelativeToolTip": "HOMESTAY_SH\\Views\\Shared\\_LayoutPage4.cshtml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAJsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T08:32:23.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AllHomestay.cshtml",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Sort\\AllHomestay.cshtml",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Views\\Sort\\AllHomestay.cshtml",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Sort\\AllHomestay.cshtml",
+              "RelativeToolTip": "HOMESTAY_SH\\Views\\Sort\\AllHomestay.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T08:23:22.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_LayoutPage2.cshtml",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Shared\\_LayoutPage2.cshtml",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Views\\Shared\\_LayoutPage2.cshtml",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Shared\\_LayoutPage2.cshtml",
+              "RelativeToolTip": "HOMESTAY_SH\\Views\\Shared\\_LayoutPage2.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T02:52:17.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "HOMESTAY_SH\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T02:52:12.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_LayoutPage1.cshtml",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Shared\\_LayoutPage1.cshtml",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Views\\Shared\\_LayoutPage1.cshtml",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Shared\\_LayoutPage1.cshtml",
+              "RelativeToolTip": "HOMESTAY_SH\\Views\\Shared\\_LayoutPage1.cshtml",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAuwIYAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T08:26:02.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomestayController.cs",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Controllers\\HomestayController.cs",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Controllers\\HomestayController.cs",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Controllers\\HomestayController.cs",
+              "RelativeToolTip": "HOMESTAY_SH\\Controllers\\HomestayController.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAHEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T15:11:13.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Homestay\\Detail.cshtml",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Views\\Homestay\\Detail.cshtml",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Homestay\\Detail.cshtml",
+              "RelativeToolTip": "HOMESTAY_SH\\Views\\Homestay\\Detail.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAC8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T07:34:07.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomestayDetailViewModel.cs",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Models\\HomestayDetailViewModel.cs",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Models\\HomestayDetailViewModel.cs",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Models\\HomestayDetailViewModel.cs",
+              "RelativeToolTip": "HOMESTAY_SH\\Models\\HomestayDetailViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T08:20:47.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomestayBookingViewModel.cs",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Models\\HomestayBookingViewModel.cs",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Models\\HomestayBookingViewModel.cs",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Models\\HomestayBookingViewModel.cs",
+              "RelativeToolTip": "HOMESTAY_SH\\Models\\HomestayBookingViewModel.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAA9wAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T06:37:45.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Search.cshtml",
+              "DocumentMoniker": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Homestay\\Search.cshtml",
+              "RelativeDocumentMoniker": "HOMESTAY_SH\\Views\\Homestay\\Search.cshtml",
+              "ToolTip": "D:\\tkwweb\\HOMESTAY_SH\\HOMESTAY_SH\\Views\\Homestay\\Search.cshtml",
+              "RelativeToolTip": "HOMESTAY_SH\\Views\\Homestay\\Search.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T02:15:34.257Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

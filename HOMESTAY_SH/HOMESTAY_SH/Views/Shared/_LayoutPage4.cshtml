@@ -1,0 +1,192 @@
+﻿@model IEnumerable<HOMESTAY_SH.Models.HomestayDetailViewModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/CSS/globals.css" />
+    <link rel="stylesheet" href="~/CSS/Main-css.css" />
+    <script src="~/Script/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/11158556be.js" crossorigin="anonymous"></script>
+    <style>
+        /* Group Container */
+        .radio-button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        /* Radio Button Styling */
+        .radio-button {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            cursor: pointer;
+            font-family: Lato, sans-serif;
+        }
+
+            /* Hide Default Radio */
+            .radio-button input[type="radio"] {
+                display: none;
+            }
+
+            /* Ellipse Styling */
+            .radio-button .ellipse {
+                width: 33px;
+                height: 33px;
+                background: #D9D9D9;
+                border-radius: 50%;
+                transition: background 0.3s;
+                position: relative;
+                left: 10px;
+                top: 53px;
+            }
+
+            /* Option Text Styling */
+            .radio-button .option-text {
+                font-size: 24px;
+                font-weight: 300;
+                color: black;
+                word-wrap: break-word;
+                margin-left: 57px;
+            }
+
+            /* Checked State */
+            .radio-button input[type="radio"]:checked + .ellipse {
+                background: #D8CDB0; /* Màu khi chọn */
+            }
+
+        .Rectangle18 {
+            width: 328px;
+            height: 400px;
+            background: white;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            position: relative;
+            left: 50px;
+            top: 280px;
+        }
+
+        .Prices {
+            color: black;
+            font-size: 32px;
+            font-family: Lato;
+            font-weight: 800;
+            word-wrap: break-word;
+            text-align: center;
+        }
+    </style>
+</head>
+<title>@ViewBag.Title</title>
+<body>
+    <div class="main-page">
+        <div class="div">
+            <div class="overlap">
+                <div class="rectangle"></div>
+                <div class="search-bar">
+                    <div class="overlap-group">
+                        <img class="image" src="https://c.animaapp.com/crHRk4Ww/img/image-2@2x.png" />
+                        <form method="get" action="@Url.Action("Search", "Homestay")">
+                            <input type="text" placeholder="Searching..." name="searchQuery" />
+                            <button type="submit" class="img-button">
+                                <img class="img" src="https://c.animaapp.com/crHRk4Ww/img/image-3@2x.png" />
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <div class="account-dropdown">
+                        <img class="image-2" src="https://c.animaapp.com/crHRk4Ww/img/image-8@2x.png" />
+                        <div class="text-wrapper-2">MY ACCOUNT</div>
+                        <div class="dropdown-content">
+                            <a href="@Url.Action("Login", "Account")">Login</a>
+                            <a href="@Url.Action("Register", "Account")">Register</a>
+                        </div>
+                    </div>
+                    <a href="@Url.Action("Logout", "Account")">
+                        <img class="imagelog" src="~/img/logout.png" />
+                    </a>
+
+                </div>
+
+                <img class="picture-header" src="https://c.animaapp.com/crHRk4Ww/img/pictureheader.png" />
+                <div class="text-wrapper-3">SWEET HOME</div>
+                <div class="text-wrapper-4">About us</div>
+                <div class="text-wrapper-5"> @Html.ActionLink("Home", "Index", "Home", null, new { @class = "home-link" })</div>
+                <div class="text-wrapper-6">City</div>
+                <div class="text-wrapper-7">Homestay</div>
+
+                <div class="Rectangle18">
+                    <p class="Prices">Prices</p>
+                    <div class="radio-button-group">
+                        <!-- Radio Button 1 -->
+                        <label class="radio-button">
+                            <input type="radio" name="priceRange" value="8-12.5" />
+                            <div class="ellipse"></div>
+                            <span class="option-text">8 - 12.5 $ / day</span>
+                        </label>
+
+                        <!-- Radio Button 2 -->
+                        <label class="radio-button">
+                            <input type="radio" name="priceRange" value="12.5-20" />
+                            <div class="ellipse"></div>
+                            <span class="option-text">12.5 - 20 $ / day</span>
+                        </label>
+
+                        <!-- Radio Button 3 -->
+                        <label class="radio-button">
+                            <input type="radio" name="priceRange" value="20-30" />
+                            <div class="ellipse"></div>
+                            <span class="option-text">20 - 30 $ / day</span>
+                        </label>
+
+                        <!-- Radio Button 4 -->
+                        <label class="radio-button">
+                            <input type="radio" name="priceRange" value="30+" />
+                            <div class="ellipse"></div>
+                            <span class="option-text">30+ $ / day</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    @RenderBody()
+                 
+
+                    <div class="footer-of-page">
+                        <div class="overlap-4">
+                            <div class="group-2">
+                                <div class="text-wrapper-11">Home</div>
+                                <div class="text-wrapper-12">About us</div>
+                                <div class="text-wrapper-13">Service</div>
+                                <div class="text-wrapper-14">Rent</div>
+                                <div class="text-wrapper-15">Contact</div>
+                                <div class="text-wrapper-16">CONTENT</div>
+                            </div>
+                            <div class="group-3">
+                                <div class="text-wrapper-17">Price</div>
+                                <p class="booking">
+                                    <span class="text-wrapper-18">Booking</span> <span class="text-wrapper-19">&nbsp;</span>
+                                </p>
+                                <div class="text-wrapper-13">Check out</div>
+                                <div class="text-wrapper-16">DETAIL</div>
+                            </div>
+                            <div class="text-wrapper-20">SOCIAL MEDIA</div>
+                            <div class="group-4">
+                                <div class="text-wrapper-21">Meal</div>
+                                <div class="text-wrapper-12">Cleaning</div>
+                                <div class="text-wrapper-13">Host</div>
+                                <div class="text-wrapper-16">SERVICE</div>
+                            </div>
+                            <div class="rectangle-2"></div>
+                            <p class="p">SWEET HOME Coppyright 2024 - 2099 Our Company T.V All rights reserved</p>
+                        </div>
+                    </div>
+                </div>
+        </div>>
+</body>
+</html>
+
+
